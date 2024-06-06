@@ -164,17 +164,3 @@ const SvgDocumentation = () => {
 		</>
 	);
 };
-
-// const SvgDocumentation = () => {
-// 	const { Switch, language } = useLanguages();
-
-// 	return (
-// 		<>
-// 			{Switch}
-// 			{language === 'en' ? <div></div> : <div></div>}
-// 		</>
-// 	);
-// };
-
-// <Primary />
-// 							<Controls />
