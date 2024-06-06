@@ -1,0 +1,14 @@
+@import './PlayerCard/playerCard';
+
+.episode-detail {
+  align-self           : start;
+  width                : 100%;
+  display              : grid;
+  grid-template-columns: min-content 1fr;
+  gap                  : 3%;
+
+
+  @media (max-width: 725px) {
+    grid-template-columns: 1fr;
+  }
+}
