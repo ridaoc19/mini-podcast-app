@@ -1,8 +1,8 @@
 import { Controls, Primary, Story } from '@storybook/blocks';
 import { Meta, StoryObj } from '@storybook/react';
 import { expect, within } from '@storybook/test';
-import { useState } from 'react';
 import { withRouter } from 'storybook-addon-remix-react-router';
+import useLanguages from '../../hooks/useLanguages/useLanguages';
 import Layout from './Layout';
 
 const meta: Meta<typeof Layout> = {
@@ -36,14 +36,12 @@ export const Layouts: Story = {
 };
 
 const LayoutDocumentation = () => {
-	const [isEnglish, setIsEnglish] = useState(false);
+	const { Switch, language } = useLanguages();
 
 	return (
 		<>
-			<button onClick={() => setIsEnglish(!isEnglish)}>
-				{isEnglish ? 'English' : 'Español'}
-			</button>
-			{isEnglish ? (
+			{Switch}
+			{language === 'en' ? (
 				<div>
 					<h1>Layout</h1>
 					<p>
