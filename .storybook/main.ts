@@ -9,12 +9,44 @@ const config: StorybookConfig = {
 		'@storybook/addon-essentials',
 		'@chromatic-com/storybook',
 		'@storybook/addon-interactions',
-		'@storybook/addon-styling-webpack',
 		'storybook-addon-remix-react-router',
+		'@storybook/addon-styling-webpack',
 	],
 	framework: {
 		name: '@storybook/react-webpack5',
 		options: {},
+	},
+	webpackFinal: async config => {
+		if (!config.module) {
+			config.module = {};
+		}
+
+		if (!config.module.rules) {
+			config.module.rules = [];
+		}
+
+		config.module.rules.push({
+			test: /\.(js|jsx|ts|tsx)$/,
+			exclude: /node_modules/,
+			use: [
+				{
+					loader: 'babel-loader',
+					options: {
+						presets: [
+							'@babel/preset-env',
+							[
+								'@babel/preset-react',
+								{
+									runtime: 'automatic',
+								},
+							],
+						],
+					},
+				},
+			],
+		});
+
+		return config;
 	},
 };
 export default config;

@@ -3,6 +3,8 @@ import {
 	MINIMAL_VIEWPORTS,
 } from '@storybook/addon-viewport';
 import type { Preview } from '@storybook/react';
+import '!style-loader!css-loader!sass-loader!../src/styles/app/app.scss';
+import '!style-loader!css-loader!sass-loader!../src/styles/index/index.scss';
 
 const preview: Preview = {
 	parameters: {
