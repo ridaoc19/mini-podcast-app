@@ -1,0 +1,97 @@
+$animation-duration       : 1.5s;
+$animation-iteration      : infinite;
+$animation-timing         : linear;
+$circle-gradient-1-loading: linear-gradient(109.8deg, rgba(52, 248, 35, 0.1855) 0%, rgba(68, 253, 38, 0.196) 100%);
+$circle-gradient-2-loading: linear-gradient(109.8deg, rgba(52, 248, 35, 0.265) 0%, rgba(68, 253, 38, 0.28) 100%);
+$circle-gradient-1-error  : linear-gradient(109.8deg, rgba(248, 35, 35, 0.1855) 0%, rgba(253, 38, 38, 0.196) 100%);
+$circle-gradient-2-error  : linear-gradient(109.8deg, rgba(248, 35, 35, 0.265) 0%, rgba(253, 38, 38, 0.28) 100%);
+$circle-gradient-1-normal : linear-gradient(109.8deg, rgba(35, 35, 248, 0.1855) 0%, rgba(38, 38, 253, 0.196) 100%);
+$circle-gradient-2-normal : linear-gradient(109.8deg, rgba(35, 35, 248, 0.265) 0%, rgba(38, 38, 253, 0.28) 100%);
+
+@keyframes scale-animation {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.navbar {
+  display              : grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width            : 100%;
+  padding              : 2rem 1rem 1rem;
+
+  &__logo {
+    display: flex;
+    gap    : 0.5rem;
+  }
+
+  &__loader {
+    display        : flex;
+    justify-content: flex-end;
+    margin-right   : 3rem;
+
+    .circles {
+      position       : relative;
+      display        : flex;
+      justify-content: center;
+      align-items    : center;
+
+      &.loading .circle-1,
+      &.loading .circle-2,
+      &.loading .circle-3,
+      &.loading .circle-4 {
+        background: $circle-gradient-1-loading;
+      }
+
+      &.error .circle-1,
+      &.error .circle-2,
+      &.error .circle-3,
+      &.error .circle-4 {
+        background: $circle-gradient-1-error;
+      }
+
+      &.normal .circle-1,
+      &.normal .circle-2,
+      &.normal .circle-3,
+      &.normal .circle-4 {
+        background: $circle-gradient-1-normal;
+      }
+    }
+
+    .circle {
+      position                 : absolute;
+      border-radius            : 50%;
+      animation-duration       : $animation-duration;
+      animation-iteration-count: $animation-iteration;
+      animation-timing-function: $animation-timing;
+      animation-name           : scale-animation;
+
+      &-1 {
+        width : 30px;
+        height: 30px;
+      }
+
+      &-2,
+      &-3,
+      &-4 {
+        background: $circle-gradient-2-loading; // default background
+      }
+
+      &-3 {
+        width : 15px;
+        height: 15px;
+      }
+
+      &-4 {
+        width : 5px;
+        height: 5px;
+      }
+    }
+  }
+}
