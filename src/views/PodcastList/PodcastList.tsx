@@ -21,12 +21,12 @@ function PodcastList() {
 				<div className='podcast-list__main-filter'>
 					<MainFilter
 						value={filter}
-						podcastTotal={filteredPodcasts?.length || 0}
+						podcastTotal={filteredPodcasts?.length ?? 0}
 						handleOnChange={event => setFilter(event.target.value)}
 					/>
 				</div>
 				<div className='podcast-list__main-cards'>
-					<MainCards podcasts={filteredPodcasts || []} />
+					<MainCards podcasts={filteredPodcasts ?? []} />
 				</div>
 			</main>
 		</StatusWrapper>

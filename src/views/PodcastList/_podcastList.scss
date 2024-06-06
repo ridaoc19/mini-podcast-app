@@ -2,10 +2,9 @@
 @import './MainCard/mainCard';
 @import './MainFilter/mainFilter';
 
-
 .podcast-list {
-  align-self    : start;
-  display       : flex;
-  flex-direction: column;
-  max-width     : 100%;
+	align-self: start;
+	display: flex;
+	flex-direction: column;
+	max-width: 100%;
 }
