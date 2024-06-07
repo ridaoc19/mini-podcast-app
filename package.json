@@ -8,7 +8,8 @@
 		"build": "webpack --mode production",
 		"lint": "eslint --fix . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"format": "prettier --write .",
-		"storybook": "storybook dev -p 8000",
+		"storybook": "storybook dev -p 6006",
+		"test-storybook": "test-storybook",
 		"build-storybook": "storybook build"
 	},
 	"repository": {

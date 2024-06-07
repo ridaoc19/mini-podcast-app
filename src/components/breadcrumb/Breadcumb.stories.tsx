@@ -31,7 +31,7 @@ type Story = StoryObj<typeof meta>;
 export const Breadcrumbs: Story = {
 	play: async ({ canvasElement }) => {
 		const { getByTestId } = within(canvasElement);
-		await expect(getByTestId('status-wrapper')).toBeInTheDocument();
+		await expect(getByTestId('breadcrumb')).toBeInTheDocument();
 	},
 };
 

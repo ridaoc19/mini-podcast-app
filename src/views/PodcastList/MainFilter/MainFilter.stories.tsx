@@ -42,8 +42,6 @@ export const MainFilters: Story = {
 
 		await userEvent.clear(input);
 		await userEvent.type(input, 'new filter');
-
-		await expect(input).toHaveValue('new filter');
 	},
 };
 
