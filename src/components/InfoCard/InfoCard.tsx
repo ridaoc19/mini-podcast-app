@@ -13,9 +13,9 @@ function InfoCard({
 				<h3 className='info-card__item--name'>{title}</h3>
 				<p className='info-card__item--artist'>{artist}</p>
 			</div>
-      <hr />
+			<hr />
 			<div className='info-card__description'>
-        <h3>Description:</h3>
+				<h3>Description:</h3>
 				<p className='main-card__description-summary'>{summary}</p>
 			</div>
 		</div>

@@ -3,8 +3,8 @@ import Switch from './Switch';
 
 function useLanguages() {
 	const [language, setLanguage] = useState<'en' | 'es'>('en');
-	
-  const toggleLanguage = () => {
+
+	const toggleLanguage = () => {
 		setLanguage(prevLanguage => (prevLanguage === 'en' ? 'es' : 'en'));
 	};
 

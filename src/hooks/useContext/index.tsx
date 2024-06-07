@@ -1,25 +1,23 @@
-import { createContext, ReactNode } from "react";
-import StatePodcast from "./State";
-import { initialStatePodcast } from "./reducer";
+import { createContext, ReactNode } from 'react';
+import StatePodcast from './State';
+import { initialStatePodcast } from './reducer';
 
-type PodcastStateReturn = ReturnType<typeof StatePodcast>
+type PodcastStateReturn = ReturnType<typeof StatePodcast>;
 
 const initialStateContext: PodcastStateReturn = {
-  podcastDispatch: () => { },
-  requestPodcasts: async () => { },
-  requestEpisodes: async (id: string) => { false && id },
-  podcastState: initialStatePodcast,
-}
+	podcastDispatch: () => console.warn('podcastDispatch is empty'),
+	requestPodcasts: async () => console.warn('requestPodcasts is empty'),
+	requestEpisodes: async (id: string) => console.warn(id),
+	podcastState: initialStatePodcast,
+};
 
-export const CreateContext = createContext<PodcastStateReturn>(initialStateContext)
+export const CreateContext =
+	createContext<PodcastStateReturn>(initialStateContext);
 
 export const StoreContext = ({ children }: { children: ReactNode }) => {
-  const podcasts = StatePodcast();
+	const podcasts = StatePodcast();
 
-  return (
-    <CreateContext.Provider value={podcasts}>
-      {children}
-    </CreateContext.Provider>
-  )
-
-}
+	return (
+		<CreateContext.Provider value={podcasts}>{children}</CreateContext.Provider>
+	);
+};

@@ -6,7 +6,7 @@ export enum TypeReducer {
 	ERROR = 'ERROR',
 }
 
-export type TypeReducerMap = {
+export interface TypeReducerMap {
 	[TypeReducer.LOADING]: {
 		type: TypeReducer.LOADING;
 		payload: boolean;
@@ -26,12 +26,12 @@ export type TypeReducerMap = {
 		type: TypeReducer.ERROR;
 		payload: Pick<PodcastState, 'errors' | 'isError' | 'isLoading'>;
 	};
-};
+}
 
-export type AppAction<T> = {
+export interface AppAction<T> {
 	type: keyof T;
 	payload: T[keyof T];
-};
+}
 
 export type Reducer = (
 	state: PodcastState,
@@ -39,9 +39,9 @@ export type Reducer = (
 ) => PodcastState;
 
 export interface PodcastState {
-	podcasts: Array<Podcast>;
-	episodes: Array<Episode>;
-	errors: Array<string>;
+	podcasts: Podcast[];
+	episodes: Episode[];
+	errors: string[];
 	isLoading: boolean;
 	isError: boolean;
 }

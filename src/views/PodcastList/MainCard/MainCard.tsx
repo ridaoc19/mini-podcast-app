@@ -6,7 +6,12 @@ function MainCard({
 	podcast: Podcast;
 }) {
 	return (
-		<Link key={id} to={`/podcast/${id}`} className='main-card' data-testid='main-card'>
+		<Link
+			key={id}
+			to={`/podcast/${id}`}
+			className='main-card'
+			data-testid='main-card'
+		>
 			<div>
 				<div className='main-card__image'>
 					<img src={image} alt={title} />

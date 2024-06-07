@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import Navbar from './Navbar/Navbar';
-
+import Breadcrumb from '../breadcrumb/Breadcrumb';
 
 function Layout({ children }: { children: ReactNode }) {
 	return (
@@ -9,6 +9,9 @@ function Layout({ children }: { children: ReactNode }) {
 				<Navbar />
 			</div>
 			<hr />
+			<div className='breadcrumb'>
+				<Breadcrumb />
+			</div>
 			<div className='layout__children' data-testid='layout-children'>
 				{children}
 			</div>
