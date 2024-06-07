@@ -30,12 +30,12 @@ function useFilterData(): UseFilterData {
 	}, [podcastId, episodeId]);
 
 	const podcast = useMemo<Podcast | null>(() => {
-		return podcastState.podcasts.find(item => item.id === podcastId) || null;
+		return podcastState.podcasts.find(item => item.id === podcastId) ?? null;
 	}, [podcastState, podcastId]);
 
 	const episode = useMemo<Episode | null>(() => {
 		return (
-			podcastState.episodes.find(item => item.trackId === Number(episodeId)) ||
+			podcastState.episodes.find(item => item.trackId === Number(episodeId)) ??
 			null
 		);
 	}, [podcastState, episodeId]);

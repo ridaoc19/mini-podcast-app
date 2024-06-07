@@ -1,4 +1,4 @@
-import { ChangeEvent, MouseEvent } from "react";
+import { ChangeEvent, MouseEvent } from 'react';
 
-export type HandleClick = (event: MouseEvent<HTMLButtonElement>) => void
-export type HandleChangeText = (event: ChangeEvent<HTMLInputElement>) => void
+export type HandleClick = (event: MouseEvent<HTMLButtonElement>) => void;
+export type HandleChangeText = (event: ChangeEvent<HTMLInputElement>) => void;

@@ -24,8 +24,10 @@ function Breadcrumb() {
 			<span>
 				{breadcrumb.map((item, index) => (
 					<span key={item.title}>
-						{index !== 0 && <span className="breadcrumb-separator">{'>'}</span>}
-						<Link className='breadcrumb__link link' to={item.route}>{item.title}</Link>
+						{index !== 0 && <span className='breadcrumb-separator'>{'>'}</span>}
+						<Link className='breadcrumb__link link' to={item.route}>
+							{item.title}
+						</Link>
 					</span>
 				))}
 			</span>
