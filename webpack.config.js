@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// const { BaseHrefWebpackPlugin } = require('base-href-webpack-plugin');
 
 module.exports = {
 	entry: path.resolve(__dirname, './src/index.tsx'),
@@ -70,19 +71,23 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, './dist'),
 		filename: 'bundle.js',
+		publicPath: "/"
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: './src/index.html',
+			template: './public/index.html',
 			filename: './index.html',
-			chunks: ['main'],
-			hash: true,
+			favicon: './src/assets/icon.svg',
 		}),
 		new MiniCssExtractPlugin(),
 	],
 	devServer: {
+		client: {
+			progress: true,
+		},
 		static: path.resolve(__dirname, './dist'),
 		historyApiFallback: true,
 		open: true,
+		watchFiles: ['src/**/*.tsx', 'src/**/*.ts', 'public/**/*'],
 	},
 };
