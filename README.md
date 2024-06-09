@@ -15,7 +15,7 @@
 
 > **Tutorial:**
 >
-> Para ver la respuesta a la solución en detalle ingrese puede ingresar a esta pagina, ella tiene una tabla de contenido, en el cual puede redirigirse a la sección que desee
+> Para ver la respuesta a la solución en detalle puede ingresar a esta pagina, ella tiene una tabla de contenido, en el cual puede redirigirse a la sección que desee
 >
 > - **Detalle Prueba Técnica:** [https://client.ridaoc.es/](https://client.ridaoc.es/)
 
