@@ -1,4 +1,4 @@
-# Mini-Aplicación de Podcasts
+# ![Icono](./src/assets/icon.svg) Mini-Aplicación de Podcasts
 
 ## ⚠️ **Importante**
 
@@ -19,7 +19,6 @@
 >
 > - **Detalle Prueba Técnica:** [https://client.ridaoc.es/](https://client.ridaoc.es/)
 
-
 ## Resumen
 
 Este proyecto consiste en la creación de una mini-aplicación para escuchar podcasts musicales. La aplicación es una Single Page Application (SPA) y consta de tres vistas principales:
@@ -34,27 +33,36 @@ Este proyecto consiste en la creación de una mini-aplicación para escuchar pod
 
 - **URL**: `/`
 - **Requerimientos**:
+
   - Mostrar un listado de los 100 podcasts más populares según el listado de Apple.
   - Almacenar el listado en el cliente y solo volver a solicitarlo si ha pasado más de un día desde la última solicitud.
   - Permitir filtrar los podcasts por título y autor en tiempo real.
   - Navegar a la vista de detalles del podcast al hacer clic en un podcast.
 
+  ![vista Principal](./src/assets/image%208.png)
+
 ### Detalle de un Podcast
 
 - **URL**: `/podcast/{podcastId}`
 - **Requerimientos**:
+
   - Mostrar una barra lateral con la imagen, título, autor y descripción del podcast.
   - Mostrar una sección principal con el número de episodios y un listado de estos (título, fecha de publicación y duración).
   - Almacenar los detalles del podcast en el cliente y solo volver a solicitarlo si ha pasado más de un día desde la última solicitud.
   - Navegar a la vista de detalles del episodio al hacer clic en un episodio.
 
+  ![detalle podcast](./src/assets/image%2011.png)
+
 ### Detalle de un Episodio
 
 - **URL**: `/podcast/{podcastId}/episode/{episodeId}`
 - **Requerimientos**:
+
   - Mostrar la misma barra lateral que en la vista de detalles del podcast.
   - Mostrar una sección principal con el título del episodio, descripción y un reproductor de audio básico (HTML5).
   - Mostrar la descripción del episodio interpretando HTML si está presente.
+
+  ![detalle episodio](./src/assets/image%2013.png)
 
 ### Cabecera
 
@@ -116,29 +124,37 @@ npm run build
 ```
 
 ### Ejecutar Tests y documentación
+
 Para iniciar Storybook, utiliza el comando `npm run storybook`. Para verificar la integridad y el funcionamiento de las historias, así como para garantizar que las pruebas estén en orden, ejecuta `npm run test-storybook`. Es importante destacar que este último comando solo funcionará si ya has iniciado Storybook con el comando anterior.
 
 Cada componente cuenta con su propia historia, test y documentación. Puedes explorar estas historias en detalle en nuestro entorno de producción en https://files.ridaoc.es/. Recuerda que cada componente es independiente, lo que facilita su comprensión y pruebas por separado.
-
 
 ```bash
 npm run storybook
 npm run test-storybook
 ```
 
+![test](./src/assets/image%204.png)
+
 ### Pruebas, Validación y herramientas
 
 - **ESlint**: Configurado con ESLint para mantener el código limpio y sin errores.
+
 ```bash
 npm run lint
 ```
+
 - **Prettier**: Para mantener un código limpio y consistente, se ha integrado [Prettier](https://prettier.io/) en este proyecto. Prettier es una herramienta de formateo de código que asegura que todo el código siga un estilo uniforme.
+
 ```bash
 npm run format
 ```
+
 - **Tests**: Configuración de Jest y react testing library en Storybook para realizar testing, se puede verificar en las historias en el apartado iteraciones, ademas puede realizar testing de las historias.
 - **Consola**: La aplicación debe estar libre de errores en la consola del navegador.
 - **Storybook**: [Storybook](https://storybook.js.org/) es herramienta de desarrollo el cual me ayudo a desarrollar componentes de forma independiente y a documentarlos.
+
+![storybook principal](./src/assets/image.png)
 
 Este proyecto fue desarrollado por **Ricardo David Ocampo**.
 
