@@ -1,10 +1,17 @@
+import { Controls, Primary } from '@storybook/blocks';
 import { Meta, StoryObj } from '@storybook/react';
 import { expect, within } from '@storybook/test';
-import { withRouter } from 'storybook-addon-remix-react-router';
+import {
+	reactRouterParameters,
+	withRouter,
+} from 'storybook-addon-remix-react-router';
+import InfoCard from '../../components/InfoCard/InfoCard';
 import Layout from '../../components/layout/Layout';
-import EpisodeDetail from './EpisodeDetail';
+import StatusWrapper from '../../components/StatusWrapper/StatusWrapper';
 import useLanguages from '../../hooks/useLanguages/useLanguages';
-import { Controls, Primary } from '@storybook/blocks';
+import { episodes, podcasts } from '../../utils/data';
+import EpisodeDetail from './EpisodeDetail';
+import PlayerCard from './PlayerCard/PlayerCard';
 
 const meta: Meta<typeof EpisodeDetail> = {
 	title: 'views/EpisodeDetail',
@@ -22,6 +29,12 @@ const meta: Meta<typeof EpisodeDetail> = {
 		docs: {
 			page: () => <EpisodeDetailsDocumentation />,
 		},
+		reactRouter: reactRouterParameters({
+			location: {
+				pathParams: { podcastId: '788236947', trackId: '1000657184523' },
+			},
+			routing: { path: '/podcast/:podcastId/episode/:trackId' },
+		}),
 	},
 	argTypes: {},
 };
@@ -30,14 +43,30 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
+const Render = () => {
+	return (
+		<StatusWrapper isLoading={false} renderError={false}>
+			<div className='episode-detail' data-testid='episode-detail'>
+				<div className='episode-detail__info-card'>
+					<InfoCard podcast={podcasts[0]} />
+				</div>
+				<div className='episode-detail__player-card'>
+					{<PlayerCard episode={episodes[0]} />}
+				</div>
+			</div>
+		</StatusWrapper>
+	);
+};
+
 export const EpisodeDetails: Story = {
+	render: () => <Render />,
 	play: async ({ canvasElement }) => {
 		const canvas = within(canvasElement);
 
-		const content = canvas.getByTestId('not-found-logo');
+		const content = canvas.getByTestId('episode-detail');
 		expect(content).toBeInTheDocument();
 
-		const title = canvas.getByText('404 - Page Not Found');
+		const title = canvas.getByText('Podcasts');
 		expect(title).toBeInTheDocument();
 	},
 };

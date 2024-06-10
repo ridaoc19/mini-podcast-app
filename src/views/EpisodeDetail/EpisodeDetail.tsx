@@ -15,7 +15,7 @@ function EpisodeDetail() {
 	return (
 		<StatusWrapper isLoading={isLoading} renderError={renderError}>
 			{podcast && episode && (
-				<div className='episode-detail'>
+				<div className='episode-detail' data-testid='episode-detail'>
 					<div className='episode-detail__info-card'>
 						<InfoCard podcast={podcast} />
 					</div>
