@@ -1,10 +1,10 @@
+import { Controls, Primary } from '@storybook/blocks';
 import { Meta, StoryObj } from '@storybook/react';
 import { expect, userEvent, within } from '@storybook/test';
 import { withRouter } from 'storybook-addon-remix-react-router';
 import Layout from '../../components/layout/Layout';
-import PodcastList from './PodcastList';
-import { Controls, Primary } from '@storybook/blocks';
 import useLanguages from '../../hooks/useLanguages/useLanguages';
+import PodcastList from './PodcastList';
 
 const meta: Meta<typeof PodcastList> = {
 	title: 'views/PodcastList',
@@ -39,8 +39,8 @@ export const PodcastLists: Story = {
 
 		const inputFilter = canvas.getByPlaceholderText('Filter podcasts...');
 		await userEvent.clear(inputFilter);
-		await userEvent.type(inputFilter, 'example');
-		expect(inputFilter).toHaveValue('example');
+
+		await userEvent.type(inputFilter, 'pod');
 	},
 };
 

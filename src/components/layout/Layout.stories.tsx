@@ -16,7 +16,11 @@ const meta: Meta<typeof Layout> = {
 			page: () => <LayoutDocumentation />,
 		},
 	},
-	argTypes: {},
+	argTypes: {
+		children: {
+			control: { type: 'object' },
+		},
+	},
 };
 
 export default meta;
@@ -24,6 +28,9 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Layouts: Story = {
+	args: {
+		children: <></>,
+	},
 	play: async ({ canvasElement }) => {
 		const canvas = within(canvasElement);
 

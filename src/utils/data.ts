@@ -130,8 +130,7 @@ export const episodes = [
 	},
 	{
 		trackId: 1000642811418,
-		trackName:
-			'The Postal Service - The District Sleeps Alone Tonight (Deluxe Anniversary Edition)',
+		trackName: 'The Postal Service - The District Sleeps Alone Tonight',
 		description:
 			'The first episode of Song Exploder, about The Postal Service song "The District Sleeps Alone Tonight," came out 10 years ago, in January 2014. To celebrate the 10th anniversary of the podcast, we\'re doing what bands do, and putting out a deluxe, expanded edition of our very first release: this version features a new interview, new insights, and new pieces of the song and demo.\n\nThe Postal Service formed in 2001. Their debut album came out in 2003, and it was a game changer. Their combination of electronic music and indie rock not only sold over a million copies; their songs were everywhere on TV and in film, and influenced a generation of artists. Last year, they played sold-out concerts across the US in celebration of the 20th anniversary of the album, and there are more shows to come in 2024. A few weeks ago, I spoke to Ben Gibbard, and I combined that with my original interview from 2013 with Jimmy Tamborello. And here, together, the two of them tell the story of how they made their song “The District Sleeps Alone Tonight.”\n\nFor more, visit songexploder.net/postal-service-deluxe.',
 		releaseDate: '2024-01-24T18:45:05Z',
