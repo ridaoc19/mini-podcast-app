@@ -27,7 +27,7 @@ const meta: Meta<typeof PodcastDetail> = {
 		},
 		reactRouter: reactRouterParameters({
 			location: {
-				pathParams: { podcastId: '42', trackId: '58' },
+				pathParams: { podcastId: '788236947', trackId: '1000657184523' },
 			},
 			routing: { path: '/podcast/:podcastId/episode/:trackId' },
 		}),
